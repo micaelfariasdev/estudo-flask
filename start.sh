@@ -2,6 +2,7 @@
 pip install -r requirements.txt
 
 # Executar migrações do banco de dados
+flask db migrate
 flask db upgrade
 
 # Criar conta admin se não existir
