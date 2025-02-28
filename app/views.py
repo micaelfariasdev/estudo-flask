@@ -46,7 +46,7 @@ def DashBoard():
     habidade = Habilidades.query.order_by(Habilidades.nome).all()   # Consulta dos cursos
     
 
-    if 'nome' not in session or session['nome'] != 'admin':
+    if 'nome' not in session or session['nome'] != 'adminmic':
         flash('Acesso restrito. Você precisa estar logado como administrador.', 'danger')
         return redirect(url_for('login'))  # Redireciona para a página de login
 
