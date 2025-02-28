@@ -1,3 +1,4 @@
 #!/bin/bash
 flask db migrate
-gunicorn app:application --bind 0.0.0.0:$PORT
+flask db upgrade
+gunicorn -w 4 -b 0.0.0.0:10000 wsgi:app
