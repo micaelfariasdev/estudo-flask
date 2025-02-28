@@ -1,6 +1,8 @@
 from app import create_app, db
 from app.models import Login
 from werkzeug.security import generate_password_hash
+import os
+load_dotenv()
 
 def create_admin():
     # Cria o contexto do aplicativo
@@ -8,8 +10,8 @@ def create_admin():
 
     # Contexto do aplicativo
     with app.app_context():
-        admin_name = "admin"
-        admin_password = "@ADmin9977"
+        admin_name = os.getenv("LOGIN")
+        admin_password = os.getenv("SENHA")
 
         # Verifica se o admin já existe
         admin = Login.query.filter_by(nome=admin_name).first()
