@@ -1,4 +1,11 @@
-#!/bin/bash
-flask db migrate
+#!/bin/sh
+pip install -r requirements.txt
+
+# Executar migrações do banco de dados
 flask db upgrade
-gunicorn -w 4 -b 0.0.0.0:10000 wsgi:app
+
+# Criar conta admin se não existir
+python create_admin.py
+
+# Iniciar o servidor
+gunicorn -w 4 -b 0.0.0.0:$PORT wsgi:app
