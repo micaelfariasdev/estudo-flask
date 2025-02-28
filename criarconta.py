@@ -1,6 +1,7 @@
 from app import create_app, db
 from app.models import Login
 from werkzeug.security import generate_password_hash
+from dotenv import load_dotenv
 import os
 load_dotenv()
 
