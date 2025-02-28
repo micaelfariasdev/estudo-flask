@@ -1,0 +1,16 @@
+# ⚙️ Ambientes Virtuais
+venv/
+.env
+.flask/
+*.pyc
+__pycache__/
+instance/
+*.sqlite3
+*.db
+
+# 🔍 Configurações do Sistema
+.DS_Store
+Thumbs.db
+
+# 📦 Dependências (caso precise ignorar)
+node_modules/

@@ -1,0 +1,438 @@
+@charset "UFT-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --cor1: #030722;
+  --cor5: #10195e;
+  --cor4: #2d3888;
+  --cor2: #5964b3;
+  --cor3: #1f2024;
+  --font: Nunito, Arial, san-serif;
+}
+
+.erro-404 {
+  font-size: 3em;
+  justify-self: center;
+  text-align: center;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+  line-height: 1.7em;
+}
+
+html {
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--cor1);
+}
+
+header {
+  background: rgb(17, 17, 17);
+}
+
+#usu {
+  grid-area: usu;
+  color: white;
+  font-weight: bolder;
+  justify-self: center;
+}
+
+.darkmode #usu {
+  color: rgb(0, 0, 0);
+}
+
+div.conteiner {
+  max-width: 1000px;
+  margin: auto;
+  width: 90%;
+  padding-top: 30px;
+  display: grid;
+  grid-template-areas:
+    "menu-hamb logo menu-config"
+    "usu usu usu";
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  justify-self: center;
+  grid-area: logo;
+  width: 70px;
+}
+
+.logo > img#larger {
+  display: none;
+}
+
+.logo > img#mobile {
+  filter: invert(100%);
+}
+
+.menu-hamb {
+  grid-area: menu-hamb;
+  background: var(--cor3);
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.menu-config {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-area: menu-config;
+  background: var(--cor3);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.square {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.lightvsg {
+  display: inline;
+  position: relative;
+  width: 100%;
+  height: 35px;
+  fill: rgb(0, 0, 0);
+  right: 100%;
+  transition: 1s;
+}
+
+.darkvsg {
+  display: inline;
+  position: relative;
+  width: 100%;
+  height: 35px;
+  right: 0%;
+  fill: rgb(255, 255, 255);
+  transition: 1s;
+}
+
+.darkmode .lightvsg {
+  right: 50%;
+  transition: 1s;
+}
+
+.darkmode .darkvsg {
+  /* display: none; */
+  right: 50%;
+  transition: 1s;
+}
+
+.menu {
+  display: none;
+}
+
+.menu a {
+  color: white;
+}
+
+header img {
+  width: 100%;
+}
+
+main {
+  min-height: 73vh;
+  background: var(--cor1);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.contato {
+  align-self: start;
+}
+
+.contato h1 {
+  font-size: 2em;
+}
+
+.contato a {
+  text-decoration: none;
+  font-size: 1em;
+  color: white;
+}
+
+.darkmode .contato a {
+  color: rgb(0, 0, 0);
+}
+
+main article,
+.qlf {
+  max-width: 1000px;
+
+  align-content: center;
+  width: 80%;
+  padding-block: 10px;
+}
+
+main h1,
+h2 {
+  color: transparent;
+  background: linear-gradient(0deg, var(--cor2), white);
+  font-size: 1em;
+  font-weight: 1000;
+  font-style: normal;
+  -webkit-background-clip: text;
+}
+
+main p,
+a {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+article.sobre {
+  width: 90%;
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "h1 h1" "img p1" "p2 p2"
+    "p3 p3"
+    "p4 p4"
+    "p5 p5";
+}
+article.sobre > h1 {
+  grid-area: h1;
+}
+
+#sobre1 {
+  grid-area: p1;
+}
+
+#sobre2 {
+  grid-area: p2;
+}
+#sobre3 {
+  grid-area: p3;
+}
+#sobre4 {
+  grid-area: p4;
+}
+#sobre5 {
+  grid-area: p5;
+}
+
+main .img {
+  width: 100px;
+  height: 100px;
+  background-image: url(../img/micaelfarias.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  grid-area: img;
+  aspect-ratio: 1/1;
+}
+
+.sobre > h1 {
+  text-align: center;
+}
+
+#nomeprint {
+  display: none;
+}
+
+article.sobre > p {
+  text-align: justify;
+  text-indent: 15px;
+}
+
+main #bgc-dark {
+  box-shadow: 0px 8px 10px -5px black inset, 0px -8px 10px -5px black inset;
+
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.151);
+  width: 100%;
+}
+
+main > .qlf {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  top: -15px;
+}
+
+main > .qlf > aside {
+  width: 200px;
+  background: white;
+  border-radius: 20px;
+  padding-top: 0;
+  box-shadow: 0px 0px 10px black;
+}
+
+main > .qlf h1 {
+  position: relative;
+  top: -5px;
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px;
+  color: #fffefe;
+  background: var(--cor3);
+}
+
+main > .qlf > aside > ul {
+  padding: 10px;
+  display: grid;
+  justify-content: center;
+  list-style-type: none;
+  font-weight: 600;
+  color: #10195e;
+  font-size: 0.5em;
+}
+
+main > .qlf > aside > ul > li > object,
+main > .qlf > aside > ul > li > img,
+main > .qlf > aside > ul > li > span {
+  display: inline;
+  position: relative;
+  top: 3px;
+  height: 1em;
+}
+
+.contato input,
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 10px;
+  border: 2px solid var(--cor2);
+}
+
+.contato textarea#msg {
+  height: 100px;
+  resize: none;
+  vertical-align: top;
+}
+
+#botão-contato {
+  border: none;
+  background: var(--cor2);
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#botão-contato:hover {
+  opacity: 90%;
+}
+
+#botão-contato:active {
+  opacity: 50%;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  background-color: var(--cor3);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.274);
+  font-size: 0.7em;
+  padding: 10px;
+}
+
+a > img {
+  padding: 10px;
+}
+
+.darkmode {
+  --cor1: #d8d9e2;
+  --cor5: #7886ee;
+  --cor4: #696e97;
+  --cor2: #1b235e;
+  --cor3: #afafaf;
+}
+
+.darkmode .logo > img#mobile {
+  filter: invert(0);
+}
+.darkmode p,
+a {
+  color: rgb(0, 0, 0);
+}
+
+.darkmode .menu a {
+  color: rgb(0, 0, 0);
+}
+
+.darkmode img {
+  filter: invert();
+}
+
+.darkmode h1,
+.darkmode h2 {
+  background: linear-gradient(0deg, var(--cor5), var(--cor2));
+  -webkit-background-clip: text;
+}
+
+.darkmode header {
+  background: rgb(255, 255, 255);
+}
+
+.darkmode main #bgc-dark {
+  background: rgba(36, 35, 35, 0.151);
+}
+
+.login {
+  align-self: center;
+  height: 200px;
+  width: 300px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.login #text {
+  text-align: center;
+  width: 100%;
+  background: rgb(0, 0, 0);
+}
+
+.darkmode .login #text {
+  background: rgb(233, 230, 230);
+}
+
+#form-login {
+  display: grid;
+  height: 120px;
+  grid-template-columns: 0.5fr;
+  justify-content: center;
+  gap: 4px;
+  align-content: center;
+}
+
+#form-login input {
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+#form-login #LoginBt {
+  background: var(--cor2);
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}

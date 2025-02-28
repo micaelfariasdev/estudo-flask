@@ -1,0 +1,278 @@
+@charset "UFT-8";
+.conteiner-dash {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: 100%;
+}
+
+.conteiner-dash .menulat {
+  display: flex;
+  flex-flow: row nowrap;
+  background: var(--cor2);
+  width: 100%;
+}
+
+.conteiner-dash .menulat a {
+  color: white;
+  font-weight: bolder;
+  font-size: 1em;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.conteiner-dash .menulat a span {
+  display: inline;
+}
+
+.conteiner-dash .menulat a span:after {
+  background: var(--cor1);
+  position: relative;
+  display: block;
+  content: "";
+  width: 0%;
+  height: 2px;
+  top: -7px;
+  transition: all 1s;
+}
+
+.conteiner-dash .menulat a:hover span:after {
+  width: 100%;
+}
+
+.conteiner-dash .conteudo {
+  background: rgb(59, 59, 59);
+  color: white;
+  padding: 10px;
+}
+
+.darkmode .conteiner-dash .conteudo {
+  background: rgb(224, 224, 224);
+  color: rgb(0, 0, 0);
+  justify-self: center;
+}
+
+.conteiner-dash .conteudo .conteudos {
+  display: grid;
+  grid-template-rows: 1fr auto auto auto;
+  grid-template-columns: 40% 40%;
+  justify-content: center;
+  gap: 10px;
+}
+
+#h1 {
+  display: inline;
+}
+
+#form-btn {
+  height: 30px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background: var(--cor2);
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#form-btn:hover {
+  opacity: 70%;
+}
+
+#form-btn:active {
+  opacity: 100%;
+  filter: grayscale();
+}
+
+#form-add {
+  transition: 1s;
+  display: none;
+  flex-flow: row nowrap;
+  grid-column: span 2;
+}
+
+#form-add form {
+  display: grid;
+  grid-template-columns: 35% 35% 25%;
+  justify-content: space-between;
+}
+#form-add form input {
+  width: 100%;
+}
+
+table {
+  font-size: 1.2em;
+}
+
+#none {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+table > thead {
+  text-align: left;
+  width: 100%;
+  font-size: 1.6em;
+}
+
+table > thead th::after {
+  content: "";
+  position: relative;
+  top: -7px;
+  display: block;
+  background: var(--cor5);
+  width: 110%;
+  height: 2px;
+}
+table > tbody td::after {
+  content: "";
+  position: relative;
+  top: -7px;
+  display: block;
+  background: var(--cor2);
+  width: 110%;
+  height: 2px;
+}
+
+input {
+  height: 30px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .conteiner-dash {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    width: 80%;
+    gap: 10px;
+  }
+
+  .conteiner-dash .menulat {
+    display: grid;
+    grid-template-columns: 100%;
+    align-content: start;
+    background: var(--cor2);
+    padding: 10px;
+  }
+
+  .conteiner-dash .menulat a {
+    display: block;
+    color: white;
+    font-weight: bolder;
+    font-size: 1em;
+    text-decoration: none;
+  }
+
+  .conteiner-dash .menulat a span {
+    display: block;
+  }
+
+  .conteiner-dash .menulat a span:after {
+    background: var(--cor1);
+    position: relative;
+    display: block;
+    content: "";
+    width: 0%;
+    height: 2px;
+    top: -7px;
+    transition: all 1s;
+  }
+
+  .conteiner-dash .menulat a:hover span:after {
+    width: 100%;
+  }
+
+  .conteiner-dash .conteudo {
+    width: 100%;
+    background: rgb(59, 59, 59);
+    color: white;
+  }
+
+  .darkmode .conteiner-dash .conteudo {
+    width: 100%;
+    background: rgb(224, 224, 224);
+    color: rgb(0, 0, 0);
+  }
+
+  .conteiner-dash .conteudo .conteudos {
+    display: grid;
+    padding: 30px;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+    gap: 30px;
+  }
+
+  #h1 {
+    display: inline;
+  }
+
+  #form-btn {
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background: var(--cor2);
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  #form-btn:hover {
+    opacity: 70%;
+  }
+
+  #form-btn:active {
+    opacity: 100%;
+    filter: grayscale();
+  }
+
+  #form-add {
+    transition: 1s;
+    display: none;
+    grid-column: span 2;
+  }
+
+  table {
+    font-size: 1.2em;
+  }
+
+  #none {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  table > thead {
+    text-align: left;
+    width: 100%;
+    font-size: 1.6em;
+  }
+
+  table > thead th::after {
+    content: "";
+    position: relative;
+    top: -7px;
+    display: block;
+    background: var(--cor5);
+    width: 110%;
+    height: 2px;
+  }
+  table > tbody td::after {
+    content: "";
+    position: relative;
+    top: -7px;
+    display: block;
+    background: var(--cor2);
+    width: 110%;
+    height: 2px;
+  }
+
+  input {
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+  }
+}

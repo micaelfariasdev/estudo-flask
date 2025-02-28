@@ -1,0 +1,202 @@
+@charset "UFT-8";
+
+@media screen and (min-width: 768px) {
+  .menu-hamb,
+  .menu-config {
+    display: none;
+  }
+
+  .menu-config {
+    background: none;
+    border-radius: 20px;
+    overflow: visible;
+    width: auto;
+    height: auto;
+  }
+
+  .logo {
+    display: grid;
+    grid-area: logo;
+    width: 200px;
+    justify-self: start;
+  }
+
+  .logo > img#larger {
+    display: inline;
+  }
+
+  .logo > img#mobile {
+    display: none;
+  }
+
+  .thema {
+    grid-area: thema;
+    display: inline;
+    justify-self: end;
+    transform: scale(0.7);
+  }
+
+  .thema .trilho {
+    background: #3f3e3e;
+    border-radius: 50px;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+    transition: 1s;
+  }
+
+  .thema .trilho .square {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: #e0dede;
+    cursor: pointer;
+    left: 0%;
+    position: relative;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    transform: scale(0.9);
+    transition: 1s;
+  }
+
+  .thema .trilho .lightvsg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    display: none;
+    transition: 1s;
+    right: 0%;
+    transform: scale(0.8);
+  }
+
+  .thema .trilho .darkvsg {
+    display: block;
+    transform: scale(0.9);
+    width: 100%;
+    height: 100%;
+    fill: black;
+    transition: 1s;
+    right: 0%;
+  }
+
+  .thema .trilho.dark .lightvsg {
+    display: block;
+    fill: rgb(255, 255, 255);
+    transition: 1s;
+  }
+
+  .thema .trilho.dark .darkvsg {
+    transition: 1s;
+    display: none;
+  }
+
+  .thema .trilho.dark {
+    background-color: #c2c2c2;
+  }
+
+  .thema .trilho.dark .square {
+    cursor: pointer;
+    position: relative;
+    left: 41px;
+    border-radius: 100px;
+    background-color: #4b4949;
+  }
+
+  .menu {
+    grid-area: gmenu;
+    display: flex;
+    justify-self: end;
+    justify-items: end;
+  }
+
+  .menu > a {
+    padding: 10px;
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+  .menu > a:hover {
+    color: #5964b3;
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.445);
+  }
+
+  #usu {
+    grid-area: usu;
+    color: white;
+    font-weight: bolder;
+    justify-self: end;
+  }
+
+  .darkmode #usu {
+    color: rgb(0, 0, 0);
+  }
+
+  #usu a {
+    background: var(--cor2);
+    font-weight: bolder;
+    padding: 1px 5px;
+    margin: 2px;
+    color: var(--cor5);
+    border-radius: 5px;
+  }
+
+  div.conteiner {
+    grid-template-areas: "logo thema" "logo usu" "logo gmenu";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 10px 1fr;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px 20px 50px;
+  }
+
+  .artigo {
+    min-height: 50vh;
+  }
+
+  main h1 {
+    font-size: 2.5em;
+  }
+
+  main p {
+    font-size: 1em;
+  }
+
+  .contato {
+    display: flex;
+  }
+
+  .contato > form,
+  #contato {
+    width: 50%;
+  }
+
+  main .img {
+    width: 250px;
+    height: 300px;
+  }
+
+  article.sobre {
+    grid-template-areas:
+      "h1 h1 h1" "img p1 p1" "img p2 p2"
+      "img p3 p3"
+      "p4 p4 p4" "p5 p5 p5";
+    padding-bottom: 50px;
+    max-width: 900px;
+  }
+
+  main > .qlf > aside {
+    width: 100%;
+    position: relative;
+    max-width: 600px;
+  }
+
+  main > .qlf > aside > ul {
+    font-size: 1em;
+  }
+
+  main > .qlf {
+    grid-template-columns: 1fr 1fr;
+  }
+}

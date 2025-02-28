@@ -1,0 +1,98 @@
+{% extends "base.html" %} {% block titulo %}Configuração{% endblock %} {% block
+main %}
+<div class="conteiner-dash">
+  <aside class="menulat">
+    <a href="#" onclick="dash('#curso'); "><span>Cursos</span></a>
+    <a href="#" onclick="dash('#habilidade');"><span>Habilidades</span></a>
+  </aside>
+  <div class="conteudo">
+    <div id="cursos" class="conteudos">
+      <h1 id="h1">Lista de Cursos</h1>
+      <button class="form-hidden" id="form-btn" onclick="insert('.form-cur'); ">
+        Adicionar
+      </button>
+      <div id="form-add" class="form-cur">
+        <form method="post">
+          {{ cursoform.csrf_token }} {{ cursoform.nome(placeholder='Curso') }}
+          {{ cursoform.lugar(placeholder='Lugar') }} {{
+          cursoform.buttomSubmit(id='form-btn' ) }}
+        </form>
+      </div>
+      <table>
+        <thead>
+          <th>Nome</th>
+          <th>Lugar</th>
+          <th style="text-align: center">Delete</th>
+        </thead>
+        <tbody>
+          {% for curso in dados %}
+          <tr>
+            <td>{{ curso.nome }}</td>
+            <td>{{ curso.lugar }}</td>
+            <td style="text-align: center">
+              <form
+                action="{{ url_for('delete_curso', id=curso.id) }}"
+                method="POST"
+                onsubmit="return confirm('Tem certeza que deseja deletar?');"
+              >
+                <button
+                  type="submit"
+                  id="none"
+                  style="position: relative; top: -7px; transform: scale(1.5)"
+                >
+                  ❌
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div id="habilidades" class="conteudos" style="display: none">
+      <h1 id="h1">Lista de Habilidades</h1>
+      <button class="form-hidden" id="form-btn" onclick="insert('.form-hab'); ">
+        Adicionar
+      </button>
+      <div id="form-add" class="form-hab">
+        <form method="post">
+          {{ habform.csrf_token }} {{ habform.nome(placeholder='Curso') }} {{
+          habform.nivel(placeholder='Nível') }} {{
+          habform.buttomSubmit(id='form-btn') }}
+        </form>
+      </div>
+      <table>
+        <thead>
+          <th>Nome</th>
+          <th>Nível</th>
+          <th style="text-align: center">Delete</th>
+        </thead>
+        <tbody>
+          {% for curso in habidade %}
+          <tr>
+            <td>{{ curso.nome }}</td>
+            <td>{{ curso.nivel }}</td>
+            <td style="text-align: center">
+              <form
+                action="{{ url_for('delete_habilidade', id=curso.id) }}"
+                method="POST"
+                onsubmit="return confirm('Tem certeza que deseja deletar?');"
+              >
+                <button
+                  type="submit"
+                  id="none"
+                  style="position: relative; top: -7px; transform: scale(1.5)"
+                >
+                  ❌
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %} {% block titulo %}Ínicio : Micael Farias{% endblock %}
+{% block main %}
+<article class="artigo saldacao">
+  <h1 id="olá">Olá, Mundo!</h1>
+  <h1 id="nome">meu nome é Micael Farias</h1>
+  <h1 id="nomeprint">Micael Farias</h1>
+  <p>Estudante com um sonho de se tornar um Desenvolvedor.</p>
+  <nav>
+    <a href="https://github.com/micaelfariasdev" target="_blank" id="git"
+      ><img src="../static/svg/github.svg" alt=""
+    /></a>
+    <a
+      href="https://www.linkedin.com/in/micaelfariasdev/"
+      target="_blank"
+      id="linkedin"
+      ><img src="../static/svg/linkedin.svg" alt=""
+    /></a>
+    <a href="https://www.instagram.com/micael.rsf" target="_blank" id="insta"
+      ><img src="../static/svg/insta.svg" alt=""
+    /></a>
+  </nav>
+</article>
+<div id="bgc-dark">
+  <article class="artigo sobre">
+    <h1>Sobre Mim</h1>
+    <div class="img"></div>
+    <p id="sobre1">
+      Minha jornada acadêmica começou em 2017, quando conquistei uma bolsa
+      integral pelo PROUNI para cursar Engenharia Civil.
+    </p>
+    <p id="sobre2">
+      Durante esse período, desenvolvi habilidades analíticas, pensamento lógico
+      e disciplina para solucionar problemas complexos.
+    </p>
+
+    <p id="sobre3">
+      No entanto, ao longo do tempo, percebi que minha verdadeira paixão sempre
+      esteve na área de tecnologia. Fascinado pelo mundo da programação, tomei a
+      decisão de redirecionar minha carreira e, há dois anos, tenho me dedicado
+      intensamente ao estudo de Programação e Desenvolvimento Web por meio de
+      cursos online e projetos práticos.
+    </p>
+    <p id="sobre4">
+      Durante essa jornada, aprendi HTML, CSS, JavaScript e Python, pretendo
+      explorar frameworks modernos como Django e React. Aprofundar meus
+      conhecimentos em banco de dados, versionamento com Git/GitHub e boas
+      práticas de desenvolvimento. Como parte do meu aprendizado, desenvolvi
+      esta página do zero, aplicando os conceitos adquiridos e buscando sempre
+      aprimorar minhas habilidades.
+    </p>
+    <p id="sobre5">
+      Tenho um grande desejo de continuar evoluindo e explorando novas
+      tecnologias. Meu objetivo é me tornar um desenvolvedor altamente
+      qualificado, sempre aberto a novos desafios e oportunidades de
+      aprendizado. 🚀
+    </p>
+  </article>
+</div>
+<div class="qlf">
+  <aside class="sobre" id="cursos">
+    <h1>Cursos</h1>
+    <ul>
+      {% for curso in cursos %}
+      <li>
+        <img
+          src="https://cdn.simpleicons.org/{{ curso.nome }}"
+          alt="{{ curso.nome }}"
+        />
+        {{ curso.nome }} -
+
+        <object
+          type="image/svg+xml"
+          data="../static/svg/cursos/{{ curso.lugar }}.svg"
+        ></object>
+        {{ curso.lugar }}
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+  <aside class="sobre" id="hab">
+    <h1>Habilidades</h1>
+    <ul>
+      {% for curso in habidade %}
+
+      <li>
+        <img
+          src="https://cdn.simpleicons.org/{{ curso.nome }}"
+          alt="{{ curso.nome }}"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block'; this.nextElementSibling.style.top='0'">
+          <span class="fallback-text" style="display: none; font-size:.9em">💻</span>
+
+        {{ curso.nome }} - {{ curso.nivel }}
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+</div>
+{% endblock %}

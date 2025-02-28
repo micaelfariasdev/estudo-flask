@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block titulo %}Ínicio : Micael Farias{% endblock %} {% block main %}
+<article class="contato">
+  <div id="contato">
+    <h1>Contato</h1>
+    <h2>Micael Farias</h2>
+    <p>
+      <strong>E-Mail:</strong>
+      <a href="mailto:micaelfarias.dev@gmail.com">micaelfarias.dev@gmail.com</a>
+    </p>
+    <p>
+      <strong>Whatsapp:</strong>
+      <a href="wa.me/5586981569018">(86) 9 8156-9018</a>
+    </p>
+  </div>
+  <form action="" method="post">
+    <h1>Fale Conosco</h1>
+    <p>Entre em contato atraves do formulario abaixo.</p>
+    {{ form.csrf_token }} {{ form.nome() }} {{ form.email }} {{ form.telefone }} {{ form.msg }} {{ form.buttomSubmit }}
+  </form>
+</article>
+
+{% endblock %}
